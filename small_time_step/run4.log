@@ -623,4 +623,7 @@ datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes">
 
 </grammar>
 
- ERROR(core  ):Invalid prototype name HEUenrich
+
+Status: Cyclus run successful!
+Output location: small_time_step/run4.sqlite
+Simulation ID: ddae71b3-ada0-497a-b67a-366791da8fb8
