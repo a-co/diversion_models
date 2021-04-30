@@ -88,6 +88,10 @@ for n in range(num_runs):
     diversion = random.choice([True, False])
     if not diversion: 
         sim["simulation"]["facility"] = sim["simulation"]["facility"][0:4]
+        sim["simulation"]["region"]["institution"]['initialfacilitylist']['entry'] = [{'number': 1, 'prototype': 'UraniumMine'}, 
+                                                          {'number': 1, 'prototype': 'LEUEnrichmentFacility'}, 
+                                                          {'number': 1, 'prototype': 'LWR'}, 
+                                                          {'number': 1, 'prototype': 'SpentFuelSink'}]
     
     throughput = float(sim["simulation"]["facility"][0]["config"]["Source"]["throughput"]) * random.uniform(0.8, 1.2)
     cycletime = int(sim["simulation"]["facility"][2]["config"]["Reactor"]["cycle_time"]) + random.randint(-15, 15)
