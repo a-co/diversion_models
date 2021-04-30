@@ -131,7 +131,10 @@ def isotope_signal(filename): #parameters: duration, dt, some transaction table 
         row = {"135/133m": 0, "135/133": 0, "135/131m": 0, \
                "133m/133": 0, "133m/131m": 0, "133/131m": 0}
         
-        if t >= cycle_ends[0]: #every time the reactor sends material elsewhere
+        if not cycle_ends: 
+            print("cycle_ends is empty for this simulation")
+        
+        elif t >= cycle_ends[0]: #every time the reactor sends material elsewhere
             previous_row = isotope_rows[i-1]
             row["135/133m"] = previous_row["135/133m"] * np.exp(-(l135-l133m)*t)
             row["135/133"] = previous_row["135/133"] * np.exp(-(l135-l133)*t)
