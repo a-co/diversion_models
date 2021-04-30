@@ -126,8 +126,6 @@ def isotope_signal(filename): #parameters: duration, dt, some transaction table 
     duration = int(tidydf["Time"].max())
     print(duration)
     cycle_ends = tidydf[tidydf["SenderId"] == "LWR"]["Time"].to_list()
-    print(cycle_ends)
-    print(type(cycle_ends[0]))
     
     for i, t in enumerate(range(duration+1)): 
         row = {"135/133m": 0, "135/133": 0, "135/131m": 0, \
