@@ -34,13 +34,13 @@ def tidy_df(file):
     except:
         print("there was a resources issue with " + file)
     
-    reactorTable= ev.eval("ReactorEvents")
-    try: 
-        reactor_events = reactorTable.loc[:, ["Time", "Event"]]
-        emissions = reactor_events.loc[reactor_events["Event"] == "DISCHARGE"]
-        print("EMISSIONS", emissions)
-    except: 
-        print("there was a reactor issue with " + file)
+#     reactorTable= ev.eval("ReactorEvents")
+#     try: 
+#         reactor_events = reactorTable.loc[:, ["Time", "Event"]]
+#         emissions = reactor_events.loc[reactor_events["Event"] == "DISCHARGE"]
+#         print("EMISSIONS", emissions)
+#     except: 
+#         print("there was a reactor issue with " + file)
     
     #merge agents, transactions, and resources
     int1 = pd.merge(transactions, resources, on='ResourceId', how='inner')
